@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:qr_reader/screens/HomeScreen.dart';
+import 'package:qr_reader/utilities/Routes.dart';
 import 'package:qr_reader/utilities/constants.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -42,8 +42,7 @@ class SplashScreenState extends State<SplashScreen> {
 
   //region Utility API
   Future checkIsFirstLaunch() async {
-    Navigator.of(context).pushReplacement(
-        new MaterialPageRoute(builder: (context) => HomeScreen()));
+    Navigator.of(context).pushReplacementNamed(home);
   }
 //endregion
 }
