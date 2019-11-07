@@ -4,7 +4,7 @@ import 'package:qr_reader/screens/QrCodeReaderScreen.dart';
 import 'package:qr_reader/screens/SplashScreen.dart';
 import 'package:qr_reader/utilities/constants.dart';
 
-import 'utilities/Routes.dart';
+import 'utilities/Routes.dart' as route;
 
 void main() => runApp(MyApp());
 
@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(title: appName, initialRoute: splash, routes: {
-      splash: (context) => SplashScreen(),
-      home: (context) => HomeScreen(),
-      scan: (context) => QrCodeReaderScreen()
+      route.splash: (context) => SplashScreen(),
+      route.home: (context) => HomeScreen(),
+      route.scan: (context) => QrCodeReaderScreen()
     });
   }
 //endregion

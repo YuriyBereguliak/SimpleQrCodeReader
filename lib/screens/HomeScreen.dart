@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qr_reader/utilities/Routes.dart';
+import 'package:qr_reader/utilities/Routes.dart' as route;
 import 'package:qr_reader/utilities/constants.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
       floatingActionButton: new FloatingActionButton(
           child: new Icon(Icons.add),
           onPressed: () {
-            Navigator.pushNamed(context, scan);
+            Navigator.pushNamed(context, route.scan);
           }),
     );
   }
