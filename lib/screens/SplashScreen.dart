@@ -7,9 +7,8 @@ import 'package:qr_reader/utilities/constants.dart';
 class SplashScreen extends StatefulWidget {
   //region StatefulWidget
   @override
-  State<StatefulWidget> createState() {
-    return new SplashScreenState();
-  }
+  State<StatefulWidget> createState() => SplashScreenState();
+
 //endregion
 }
 
@@ -19,7 +18,7 @@ class SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     new Timer(new Duration(milliseconds: 2000), () {
-      checkIsFirstLaunch();
+      _checkIsFirstLaunch();
     });
   }
 
@@ -41,7 +40,7 @@ class SplashScreenState extends State<SplashScreen> {
 //endregion
 
   //region Utility API
-  Future checkIsFirstLaunch() async {
+  Future _checkIsFirstLaunch() async {
     Navigator.of(context).pushReplacementNamed(route.home);
   }
 //endregion
