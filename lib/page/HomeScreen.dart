@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:qr_reader/utilities/Routes.dart' as route;
-import 'package:qr_reader/utilities/constants.dart';
+import 'package:qr_reader/utils/Routes.dart' as route;
+import 'package:qr_reader/utils/constants.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
