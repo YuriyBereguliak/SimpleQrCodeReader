@@ -27,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: _widgetOptions.elementAt(_selectedTab),
       ),
       bottomNavigationBar: BottomAppBar(
+        color: Colors.white,
         child: Container(
           height: 50.0,
           child: Row(
