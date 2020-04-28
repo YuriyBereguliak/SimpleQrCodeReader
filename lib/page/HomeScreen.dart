@@ -9,12 +9,40 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(appName),
       ),
-      body: Center(child: Text("List of scanned items")),
-      floatingActionButton: new FloatingActionButton(
-          child: new Icon(Icons.add),
-          onPressed: () {
-            Navigator.pushNamed(context, route.scan);
-          }),
+      body: Center(
+        child: Text('List of scanned barcodes'),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        shape: const CircularNotchedRectangle(),
+        color: Colors.blue,
+        child: Container(
+          height: 50.0,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              IconButton(
+                color: Colors.white,
+                icon: Icon(Icons.list),
+                onPressed: () {},
+              ),
+              IconButton(
+                color: Colors.white,
+                icon: Icon(Icons.settings),
+                onPressed: () {},
+              )
+            ],
+          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Increment Counter',
+        child: Icon(Icons.add),
+        onPressed: () {
+          Navigator.of(context).pushNamed(route.scan);
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
