@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:qr_reader/utils/Routes.dart' as route;
-import 'package:qr_reader/utils/constants.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(appName),
-      ),
       body: Center(
         child: Text('List of scanned barcodes'),
       ),
       bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        color: Colors.blue,
         child: Container(
           height: 50.0,
           child: Row(
@@ -22,12 +16,12 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               IconButton(
-                color: Colors.white,
+                color: Colors.blue,
                 icon: Icon(Icons.list),
                 onPressed: () {},
               ),
               IconButton(
-                color: Colors.white,
+                color: Colors.blue,
                 icon: Icon(Icons.settings),
                 onPressed: () {},
               )
@@ -35,12 +29,12 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        tooltip: 'Increment Counter',
-        child: Icon(Icons.add),
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           Navigator.of(context).pushNamed(route.scan);
         },
+        icon: Icon(Icons.add),
+        label: const Text("Scan"),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
