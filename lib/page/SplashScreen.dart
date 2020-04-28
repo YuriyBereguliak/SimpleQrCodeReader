@@ -8,7 +8,6 @@ class SplashScreen extends StatefulWidget {
   //region StatefulWidget
   @override
   State<StatefulWidget> createState() => SplashScreenState();
-
 //endregion
 }
 
