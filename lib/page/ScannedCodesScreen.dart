@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:qr_reader/utils/Routes.dart' as route;
 
 class ScannedCodesScreen extends StatefulWidget {
   //region StatefulWidget
@@ -11,7 +12,18 @@ class ScannedCodesScreen extends StatefulWidget {
 }
 
 class _ScannedCodesState extends State<ScannedCodesScreen> {
-  final List<String> _items = ["1", "2", "3", "4"];
+  final List<String> _items = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+  ];
 
   //region State
   @override
@@ -30,9 +42,17 @@ class _ScannedCodesState extends State<ScannedCodesScreen> {
 
   //region Utility API
   Widget _buildListItem(int index) {
-    return Container(
-      color: Colors.white,
-      child: Text(_items.elementAt(index)),
+    return Card(
+      child: InkWell(
+        child: ListTile(
+          leading: Icon(Icons.camera_alt),
+          title: Text("type"),
+          subtitle: Text(_items.elementAt(index)),
+          onTap: () {
+            Navigator.of(context).pushNamed(route.details);
+          },
+        ),
+      ),
     );
   }
 //endregion
