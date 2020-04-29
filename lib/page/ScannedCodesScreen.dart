@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_reader/utils/Routes.dart' as route;
 
+import 'QrCodeDetailsScreen.dart';
+
 class ScannedCodesScreen extends StatefulWidget {
   //region StatefulWidget
   @override
@@ -13,16 +15,16 @@ class ScannedCodesScreen extends StatefulWidget {
 
 class _ScannedCodesState extends State<ScannedCodesScreen> {
   final List<String> _items = [
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10"
+    "123654",
+    "215964",
+    "33574656",
+    "4646849",
+    "5354354",
+    "61651651",
+    "73536543",
+    "8654654",
+    "93354365466",
+    "1066454654654658"
   ];
 
   //region State
@@ -49,7 +51,8 @@ class _ScannedCodesState extends State<ScannedCodesScreen> {
           title: Text("type"),
           subtitle: Text(_items.elementAt(index)),
           onTap: () {
-            Navigator.of(context).pushNamed(route.details);
+            Navigator.of(context).pushNamed(route.details,
+                arguments: QrCodeDetailsArgument(_items.elementAt(index)));
           },
         ),
       ),
