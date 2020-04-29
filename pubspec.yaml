@@ -27,6 +27,9 @@ dependencies:
   # Library for QR code rendering
   qr_flutter: ^3.1.0
 
+  # Library for QR and BR codes scanning
+  qrscan: ^0.2.17
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
