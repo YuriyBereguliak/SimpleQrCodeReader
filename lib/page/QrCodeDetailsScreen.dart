@@ -9,7 +9,6 @@ class QrCodeDetailsScreen extends StatelessWidget {
         .settings
         .arguments;
     return Material(
-      color: Colors.grey[350],
       child: Container(
         padding: const EdgeInsets.all(32),
         child: Column(

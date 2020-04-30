@@ -27,7 +27,6 @@ class _HomeScreenState extends State<HomeScreen> {
         child: _widgetOptions.elementAt(_selectedTab),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.white,
         child: Container(
           height: 50.0,
           child: Row(
@@ -35,14 +34,18 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               IconButton(
-                color: _selectedTab == 0 ? Colors.blue : Colors.grey,
+                color: _selectedTab == 0
+                    ? Theme.of(context).accentColor
+                    : Color.fromRGBO(66, 106, 163, 1.0),
                 icon: Icon(Icons.list),
                 onPressed: () {
                   _onTabItemTapped(0);
                 },
               ),
               IconButton(
-                color: _selectedTab == 1 ? Colors.blue : Colors.grey,
+                color: _selectedTab == 1
+                    ? Theme.of(context).accentColor
+                    : Color.fromRGBO(66, 106, 163, 1.0),
                 icon: Icon(Icons.settings),
                 onPressed: () {
                   _onTabItemTapped(1);

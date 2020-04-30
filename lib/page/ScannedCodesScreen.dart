@@ -30,8 +30,12 @@ class _ScannedCodesState extends State<ScannedCodesScreen> {
   //region State
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ListView.builder(
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Scanned items"),
+      ),
+      body: ListView.builder(
         itemCount: _items.length,
         itemBuilder: (BuildContext context, int index) {
           return _buildListItem(index);
