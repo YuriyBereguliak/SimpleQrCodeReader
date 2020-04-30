@@ -15,16 +15,16 @@ class _SettingsState extends State<SettingsScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const  Text("Settings"),
+        title: const Text("Settings"),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-           Text("Launch settings", style: Theme.of(context).textTheme.title),
+            Text("Launch settings", style: Theme.of(context).textTheme.title),
             SwitchListTile(
-                title: Text("Start from scan code"),
+                title: const Text("Start from scan code"),
                 value: _isStartScanner,
                 contentPadding: EdgeInsets.all(0),
                 onChanged: (bool value) {
