@@ -48,8 +48,7 @@ class _ScannedCodesState extends State<ScannedCodesScreen> {
       child: InkWell(
         child: ListTile(
           leading: Icon(Icons.camera_alt),
-          title: Text("type"),
-          subtitle: Text(_items.elementAt(index)),
+          title: Text(_items.elementAt(index)),
           onTap: () {
             Navigator.of(context).pushNamed(route.details,
                 arguments: QrCodeDetailsArgument(_items.elementAt(index)));
