@@ -32,6 +32,7 @@ idea/
 build/
 
 # Android related
+.idea
 **/android/**/gradle-wrapper.jar
 **/android/.gradle
 **/android/captures/
