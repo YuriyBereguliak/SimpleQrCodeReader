@@ -35,8 +35,8 @@ class _HomeScreenState extends State<HomeScreen> {
             children: <Widget>[
               IconButton(
                 color: _selectedTab == 0
-                    ? Theme.of(context).accentColor
-                    : Color.fromRGBO(66, 106, 163, 1.0),
+                    ? _selectedIconColor()
+                    : _unselectedIconColor(),
                 icon: Icon(Icons.list),
                 onPressed: () {
                   _onTabItemTapped(0);
@@ -44,8 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               IconButton(
                 color: _selectedTab == 1
-                    ? Theme.of(context).accentColor
-                    : Color.fromRGBO(66, 106, 163, 1.0),
+                    ? _selectedIconColor()
+                    : _unselectedIconColor(),
                 icon: Icon(Icons.settings),
                 onPressed: () {
                   _onTabItemTapped(1);
@@ -65,7 +65,6 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
-
 //endregion
 
   //region Utility API
@@ -74,5 +73,9 @@ class _HomeScreenState extends State<HomeScreen> {
       _selectedTab = index;
     });
   }
+
+  Color _selectedIconColor() => Theme.of(context).accentColor;
+
+  Color _unselectedIconColor() => Color.fromRGBO(66, 106, 163, 1.0);
 //endregion
 }
