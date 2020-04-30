@@ -30,6 +30,9 @@ dependencies:
   # Library for QR and BR codes scanning
   qrscan: ^0.2.17
 
+  # RxDart
+  rxdart: ^0.18.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
