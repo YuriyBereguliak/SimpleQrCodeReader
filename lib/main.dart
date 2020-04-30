@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:qr_reader/ui/HomeScreen.dart';
+import 'package:qr_reader/ui/QrCodeDetailsScreen.dart';
+import 'package:qr_reader/ui/SplashScreen.dart';
 import 'package:qr_reader/utils/constants.dart';
 
-import 'page/HomeScreen.dart';
-import 'page/QrCodeDetailsScreen.dart';
-import 'page/QrCodeReaderScreen.dart';
-import 'page/SplashScreen.dart';
+import 'ui/QrCodeReaderScreen.dart';
 import 'utils/Routes.dart' as route;
 
 void main() => runApp(MyApp());
