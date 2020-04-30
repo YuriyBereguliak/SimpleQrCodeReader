@@ -14,33 +14,59 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: appName,
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          // Define the default brightness and colors.
-          brightness: Brightness.light,
-          primaryColor: Colors.lightBlue[800],
-          accentColor: Colors.cyan[600],
+      title: appName,
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        // Define the default brightness and colors.
+        brightness: Brightness.light,
 
-          // Define the default font family.
-          fontFamily: 'Roboto',
+        // Define primary colors
+        primaryColor: const Color.fromARGB(255, 99, 78, 122),
+        accentColor: const Color.fromARGB(255, 250, 190, 90),
+        splashColor: const Color.fromARGB(255, 250, 190, 90),
 
-          // Define the default TextTheme. Use this to specify the default
-          // text styling for headlines, titles, bodies of text, and more.
-          textTheme: TextTheme(
-            headline: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-            title: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-            body1: TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal),
-            caption: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500),
-          ),
+        // Define app background color
+        canvasColor: const Color.fromARGB(255, 32, 117, 131),
+
+        // Define theme fro icons
+        iconTheme: IconThemeData(
+          color: const Color.fromRGBO(66, 106, 163, 1.0),
         ),
-        initialRoute: route.splash,
-        routes: {
-          route.splash: (context) => SplashScreen(),
-          route.home: (context) => HomeScreen(),
-          route.scan: (context) => QrCodeReaderScreen(),
-          route.details: (context) => QrCodeDetailsScreen()
-        });
+
+        // Define bottom app bar colors
+        bottomAppBarTheme: BottomAppBarTheme(
+          color: const Color.fromRGBO(27, 61, 87, 1.0),
+        ),
+
+        // Define AppBar colors
+        appBarTheme: AppBarTheme(
+          color: const Color.fromRGBO(27, 61, 87, 1.0),
+        ),
+
+        // Define the default font family.
+        fontFamily: 'Roboto',
+
+        // Define the default TextTheme. Use this to specify the default
+        // text styling for headlines, titles, bodies of text, and more.
+        textTheme: TextTheme(
+          headline: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+          title: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+          body1: TextStyle(fontSize: 14.0, fontWeight: FontWeight.normal),
+          caption: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500),
+        ),
+      ),
+
+      // Define app routes
+      routes: {
+        route.splash: (context) => SplashScreen(),
+        route.home: (context) => HomeScreen(),
+        route.scan: (context) => QrCodeReaderScreen(),
+        route.details: (context) => QrCodeDetailsScreen()
+      },
+
+      // Define initial route
+      initialRoute: route.splash,
+    );
   }
 //endregion
 }
