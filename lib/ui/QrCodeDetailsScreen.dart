@@ -19,6 +19,7 @@ class QrCodeDetailsScreen extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: IconButton(
+                color: Colors.white,
                 icon: Icon(
                   Icons.close,
                   size: 32,
