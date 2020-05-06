@@ -26,9 +26,9 @@ class MyApp extends StatelessWidget {
         splashColor: const Color.fromARGB(255, 250, 190, 90),
 
         // Define app background color
-        canvasColor: const Color.fromARGB(255, 32, 117, 131),
+        canvasColor: const Color.fromARGB(255, 228, 230, 231),
 
-        // Define theme fro icons
+        // Define theme for icons
         iconTheme: IconThemeData(
           color: const Color.fromRGBO(66, 106, 163, 1.0),
         ),
@@ -45,6 +45,11 @@ class MyApp extends StatelessWidget {
 
         // Define the default font family.
         fontFamily: 'Roboto',
+
+        // Define theme for Card widgets
+        cardTheme: CardTheme(
+          elevation: 3,
+        ),
 
         // Define the default TextTheme. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
