@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:qr_reader/utils/Routes.dart' as route;
+import 'package:qr_reader/src/utils/Routes.dart' as route;
 
 import 'QrCodeDetailsScreen.dart';
 

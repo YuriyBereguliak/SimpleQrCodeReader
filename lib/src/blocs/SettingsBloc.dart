@@ -1,4 +1,4 @@
-import 'package:qr_reader/resources/UserSettingsResource.dart';
+import 'package:qr_reader/src/resources/UserSettingsResource.dart';
 import 'package:rxdart/rxdart.dart';
 
 class SettingsBloc {

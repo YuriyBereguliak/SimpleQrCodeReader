@@ -1,9 +1,8 @@
-import 'package:qr_reader/resources/local/UserSettingsLocalApi.dart';
-import 'package:qr_reader/resources/local/UserSettingsLocalApiImpl.dart';
+import 'local/UserSettingsLocalApi.dart';
+import 'local/UserSettingsLocalApiImpl.dart';
 
 class UserSettingsResource {
   final UserSettingsLocalApi _localApi = UserSettingsLocalApiImpl();
-
 
   Future<bool> isStartAppFromScanner() => _localApi.isStartFromScanner();
 }

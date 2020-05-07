@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:qr_reader/utils/Routes.dart' as route;
-import 'package:qr_reader/utils/constants.dart';
+import 'package:qr_reader/src/utils/Routes.dart' as route;
+import 'package:qr_reader/src/utils/constants.dart';
 
 class SplashScreen extends StatefulWidget {
   //region StatefulWidget
