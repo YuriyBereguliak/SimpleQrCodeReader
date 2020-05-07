@@ -22,9 +22,13 @@ class _SettingsState extends State<SettingsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text("Launch settings", style: Theme.of(context).textTheme.title),
+            Text("Launch settings",
+                style: Theme.of(context).textTheme.headline6),
             SwitchListTile(
-                title: const Text("Start from scan code"),
+                title: Text(
+                  "Start from scan code",
+                  style: Theme.of(context).textTheme.bodyText1,
+                ),
                 value: _isStartScanner,
                 contentPadding: EdgeInsets.all(0),
                 onChanged: (bool value) {
