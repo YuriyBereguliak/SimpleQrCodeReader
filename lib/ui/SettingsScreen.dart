@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr_reader/blocs/SettingsBloc.dart';
 
 class SettingsScreen extends StatefulWidget {
   @override
@@ -9,6 +10,21 @@ class SettingsScreen extends StatefulWidget {
 
 class _SettingsState extends State<SettingsScreen> {
   bool _isStartScanner = false;
+
+  SettingsBloc _settingsBloc;
+
+  @override
+  void didChangeDependencies() {
+    _settingsBloc = SettingsBloc();
+    _settingsBloc.loadStartAppSettingValue();
+    super.didChangeDependencies();
+  }
+
+  @override
+  void dispose() {
+    _settingsBloc.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
