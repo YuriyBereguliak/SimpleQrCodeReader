@@ -25,7 +25,10 @@ idea/
 **/doc/api/
 .dart_tool/
 .flutter-plugins
+.flutter-plugins-dependencies
+.metadata
 .packages
+pubspec.lock
 .pub-cache/
 .pub/
 /build/
