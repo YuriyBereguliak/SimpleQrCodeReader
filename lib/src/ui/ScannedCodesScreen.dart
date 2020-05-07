@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:qr_reader/src/blocs/scanned_items_bloc.dart';
 import 'package:qr_reader/src/utils/Routes.dart' as route;
 
 import 'QrCodeDetailsScreen.dart';
@@ -14,20 +15,19 @@ class ScannedCodesScreen extends StatefulWidget {
 }
 
 class _ScannedCodesState extends State<ScannedCodesScreen> {
-  final List<String> _items = [
-    "123654",
-    "215964",
-    "33574656",
-    "4646849",
-    "5354354",
-    "61651651",
-    "73536543",
-    "8654654",
-    "93354365466",
-    "1066454654654658"
-  ];
-
   //region State
+  @override
+  void initState() {
+    super.initState();
+    scannedItemsBloc.loadScannedItems();
+  }
+
+  @override
+  void dispose() {
+    scannedItemsBloc.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,30 +35,47 @@ class _ScannedCodesState extends State<ScannedCodesScreen> {
         centerTitle: true,
         title: Text("Scanned items"),
       ),
-      body: ListView.builder(
-        itemCount: _items.length,
-        itemBuilder: (BuildContext context, int index) {
-          return _buildListItem(index);
-        },
-      ),
+      body: StreamBuilder(
+          stream: scannedItemsBloc.scannedItemsStream,
+          builder: (context, AsyncSnapshot<List<String>> snapshot) {
+            if (snapshot.hasData) {
+              return _buildList(snapshot);
+            } else {
+              return _buildEmptyPlaceholder();
+            }
+          }),
     );
   }
 
   //endregion
 
   //region Utility API
-  Widget _buildListItem(int index) {
+  Widget _buildList(AsyncSnapshot<List<String>> snapshot) {
+    return ListView.builder(
+        itemCount: snapshot.data.length,
+        itemBuilder: (BuildContext context, int index) {
+          return _buildListItem(snapshot.data.elementAt(index));
+        });
+  }
+
+  Widget _buildListItem(String value) {
     return Card(
       child: InkWell(
         child: ListTile(
           leading: Icon(Icons.camera_alt),
-          title: Text(_items.elementAt(index)),
+          title: Text(value),
           onTap: () {
             Navigator.of(context).pushNamed(route.details,
-                arguments: QrCodeDetailsArgument(_items.elementAt(index)));
+                arguments: QrCodeDetailsArgument(value));
           },
         ),
       ),
+    );
+  }
+
+  Widget _buildEmptyPlaceholder() {
+    return Center(
+      child: Text("You haven't scanned any code yet"),
     );
   }
 //endregion

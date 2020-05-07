@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qr_reader/src/blocs/SettingsBloc.dart';
+import 'package:qr_reader/src/blocs/settings_bloc.dart';
 
 class SettingsScreen extends StatefulWidget {
   @override

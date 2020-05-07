@@ -1,5 +1,5 @@
-import 'local/UserSettingsLocalApi.dart';
-import 'local/UserSettingsLocalApiImpl.dart';
+import 'local/settings/UserSettingsLocalApiImpl.dart';
+import 'local/settings/UserSettingsLocalApi.dart';
 
 class UserSettingsResource {
   final UserSettingsLocalApi _localApi = UserSettingsLocalApiImpl();
