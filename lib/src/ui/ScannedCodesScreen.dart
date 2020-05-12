@@ -15,16 +15,17 @@ class ScannedCodesScreen extends StatefulWidget {
 }
 
 class _ScannedCodesState extends State<ScannedCodesScreen> {
+  ScanedItemsBloc _scannedItemsBloc = ScanedItemsBloc();
   //region State
   @override
   void initState() {
     super.initState();
-    scannedItemsBloc.loadScannedItems();
+    _scannedItemsBloc.loadScannedItems();
   }
 
   @override
   void dispose() {
-    scannedItemsBloc.dispose();
+    _scannedItemsBloc.dispose();
     super.dispose();
   }
 
@@ -36,7 +37,7 @@ class _ScannedCodesState extends State<ScannedCodesScreen> {
         title: Text("Scanned items"),
       ),
       body: StreamBuilder(
-          stream: scannedItemsBloc.scannedItemsStream,
+          stream: _scannedItemsBloc.scannedItemsStream,
           builder: (context, AsyncSnapshot<List<String>> snapshot) {
             if (snapshot.hasData) {
               return _buildList(snapshot);

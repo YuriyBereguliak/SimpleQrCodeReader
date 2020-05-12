@@ -16,5 +16,3 @@ class ScanedItemsBloc {
     _scannedItemsFetcher.close();
   }
 }
-
-final scannedItemsBloc = ScanedItemsBloc();
