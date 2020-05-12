@@ -11,7 +11,10 @@ class ScannedItemsLocalApiImpl implements ScannedItemsLocalApi {
     "73536543",
     "8654654",
     "93354365466",
-    "1066454654654658"
+    "1066454654654658",
+    "156",
+    "6656",
+    "65146954"
   ];
 
   @override

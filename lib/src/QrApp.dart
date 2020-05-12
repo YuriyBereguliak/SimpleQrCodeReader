@@ -45,7 +45,7 @@ class QrApp extends StatelessWidget {
 
         // Define theme for Card widgets
         cardTheme: CardTheme(
-          elevation: 3,
+          elevation: 1,
         ),
 
         // Define the default TextTheme. Use this to specify the default
