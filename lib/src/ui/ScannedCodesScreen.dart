@@ -15,7 +15,7 @@ class ScannedCodesScreen extends StatefulWidget {
 }
 
 class _ScannedCodesState extends State<ScannedCodesScreen> {
-  ScanedItemsBloc _scannedItemsBloc = ScanedItemsBloc();
+  ScannedItemsBloc _scannedItemsBloc = ScannedItemsBloc();
   //region State
   @override
   void initState() {

@@ -1,7 +1,7 @@
 import 'package:qr_reader/src/resources/scanned_items_resource.dart';
 import 'package:rxdart/rxdart.dart';
 
-class ScanedItemsBloc {
+class ScannedItemsBloc {
   final _repository = ScannedItemsRepository();
   final _scannedItemsFetcher = PublishSubject<List<String>>();
 
