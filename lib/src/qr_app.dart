@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:qr_reader/src/ui/HomeScreen.dart';
-import 'package:qr_reader/src/ui/QrCodeDetailsScreen.dart';
-import 'package:qr_reader/src/ui/QrCodeReaderScreen.dart';
-import 'package:qr_reader/src/ui/SplashScreen.dart';
+import 'package:qr_reader/src/ui/home_screen.dart';
+import 'package:qr_reader/src/ui/qr_code_details_screen.dart';
+import 'package:qr_reader/src/ui/qr_code_reader_screen.dart';
+import 'package:qr_reader/src/ui/splash_screen.dart';
 import 'package:qr_reader/src/utils/constants.dart';
 import 'package:qr_reader/src/utils/routes.dart';
 

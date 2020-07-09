@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:qr_reader/src/ui/ScannedCodesScreen.dart';
-import 'package:qr_reader/src/ui/SettingsScreen.dart';
+import 'package:qr_reader/src/ui/scanned_code_screen.dart';
+import 'package:qr_reader/src/ui/settings_screen.dart';
 import 'package:qr_reader/src/utils/Routes.dart';
 
 class HomeScreen extends StatefulWidget {

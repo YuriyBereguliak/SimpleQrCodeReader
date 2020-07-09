@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:qr_reader/src/blocs/scanned_items_bloc.dart';
 import 'package:qr_reader/src/utils/Routes.dart';
 
-import 'QrCodeDetailsScreen.dart';
+import 'qr_code_details_screen.dart';
 
 class ScannedCodesScreen extends StatefulWidget {
   //region StatefulWidget
