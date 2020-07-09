@@ -1,1 +1,1 @@
-enum HomeTabs { barcodes, settings }
+enum HomeTab { codes, settings }

@@ -1,82 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:qr_reader/src/blocs/tab/home_tab_bloc.dart';
+import 'package:qr_reader/src/blocs/tab/home_tab_event.dart';
+import 'package:qr_reader/src/models/home_tabs.dart';
 import 'package:qr_reader/src/ui/scanned_code_screen.dart';
 import 'package:qr_reader/src/ui/settings_screen.dart';
 import 'package:qr_reader/src/utils/Routes.dart';
+import 'package:qr_reader/src/widgets/tabs_selector.dart';
 
-class HomeScreen extends StatefulWidget {
-  //region StatefulWidget
-  @override
-  _HomeScreenState createState() {
-    return _HomeScreenState();
-  }
-//endregion
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  var _selectedTab = 0;
-  final List<Widget> _widgetOptions = <Widget>[
-    ScannedCodesScreen(),
-    SettingsScreen()
-  ];
-
-  //region State
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedTab),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        elevation: 10,
-        child: Container(
-          height: 50.0,
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              IconButton(
-                color: _selectedTab == 0
-                    ? _selectedIconColor()
-                    : _unselectedIconColor(),
-                icon: Icon(Icons.list),
-                onPressed: () {
-                  _onTabItemTapped(0);
-                },
-              ),
-              IconButton(
-                color: _selectedTab == 1
-                    ? _selectedIconColor()
-                    : _unselectedIconColor(),
-                icon: Icon(Icons.settings),
-                onPressed: () {
-                  _onTabItemTapped(1);
-                },
-              )
-            ],
+    final tabBloc = BlocProvider.of<HomeTabBloc>(context);
+    return BlocBuilder<HomeTabBloc, HomeTab>(
+      builder: (context, activeTab) {
+        return Scaffold(
+          body: Center(
+            child: activeTab == HomeTab.codes
+                ? ScannedCodesScreen()
+                : SettingsScreen(),
           ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          Navigator.of(context).pushNamed(QrCodeReaderRoutes.scan);
-        },
-        icon: Icon(Icons.add),
-        label: const Text("Scan"),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          bottomNavigationBar: TabSelector(
+            activeTab: activeTab,
+            onTabSelected: (tab) => tabBloc.add((HomeTabChangedEvent(tab))),
+          ),
+          floatingActionButton: FloatingActionButton.extended(
+            onPressed: () {
+              Navigator.of(context).pushNamed(QrCodeReaderRoutes.scan);
+            },
+            icon: Icon(Icons.add),
+            label: const Text("Scan"),
+          ),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
+        );
+      },
     );
   }
-//endregion
-
-  //region Utility API
-  void _onTabItemTapped(int index) {
-    setState(() {
-      _selectedTab = index;
-    });
-  }
-
-  Color _selectedIconColor() => Theme.of(context).accentColor;
-
-  Color _unselectedIconColor() => Color.fromRGBO(66, 106, 163, 1.0);
-//endregion
 }

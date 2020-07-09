@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:qr_reader/src/blocs/tab/home_tab_bloc.dart';
 import 'package:qr_reader/src/ui/home_screen.dart';
 import 'package:qr_reader/src/ui/qr_code_details_screen.dart';
 import 'package:qr_reader/src/ui/qr_code_reader_screen.dart';
-import 'package:qr_reader/src/ui/splash_screen.dart';
 import 'package:qr_reader/src/utils/constants.dart';
 import 'package:qr_reader/src/utils/routes.dart';
 
@@ -60,7 +61,16 @@ class QrApp extends StatelessWidget {
 
       // Define app routes
       routes: {
-        QrCodeReaderRoutes.splash: (context) => SplashScreen(),
+        QrCodeReaderRoutes.splash: (context) {
+          return MultiBlocProvider(
+            providers: [
+              BlocProvider<HomeTabBloc>(
+                create: (context) => HomeTabBloc(),
+              ),
+            ],
+            child: HomeScreen(),
+          );
+        },
         QrCodeReaderRoutes.home: (context) => HomeScreen(),
         QrCodeReaderRoutes.scan: (context) => QrCodeReaderScreen(),
         QrCodeReaderRoutes.details: (context) => QrCodeDetailsScreen()
