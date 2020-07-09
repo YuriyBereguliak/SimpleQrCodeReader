@@ -1,0 +1,1 @@
+enum HomeTabs { barcodes, settings }
