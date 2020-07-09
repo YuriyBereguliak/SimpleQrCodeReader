@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qr_reader/src/ui/ScannedCodesScreen.dart';
 import 'package:qr_reader/src/ui/SettingsScreen.dart';
-import 'package:qr_reader/src/utils/Routes.dart' as route;
+import 'package:qr_reader/src/utils/Routes.dart';
 
 class HomeScreen extends StatefulWidget {
   //region StatefulWidget
@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          Navigator.of(context).pushNamed(route.scan);
+          Navigator.of(context).pushNamed(QrCodeReaderRoutes.scan);
         },
         icon: Icon(Icons.add),
         label: const Text("Scan"),

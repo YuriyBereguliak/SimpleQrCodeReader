@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:qr_reader/src/utils/Routes.dart' as route;
+import 'package:qr_reader/src/utils/Routes.dart';
 import 'package:qr_reader/src/utils/constants.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -40,7 +40,7 @@ class SplashScreenState extends State<SplashScreen> {
 
   //region Utility API
   Future _checkIsFirstLaunch() async {
-    Navigator.of(context).pushReplacementNamed(route.home);
+    Navigator.of(context).pushReplacementNamed(QrCodeReaderRoutes.home);
   }
 //endregion
 }

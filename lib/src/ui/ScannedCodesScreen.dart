@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_reader/src/blocs/scanned_items_bloc.dart';
-import 'package:qr_reader/src/utils/Routes.dart' as route;
+import 'package:qr_reader/src/utils/Routes.dart';
 
 import 'QrCodeDetailsScreen.dart';
 
@@ -16,6 +16,7 @@ class ScannedCodesScreen extends StatefulWidget {
 
 class _ScannedCodesState extends State<ScannedCodesScreen> {
   ScannedItemsBloc _scannedItemsBloc = ScannedItemsBloc();
+
   //region State
   @override
   void initState() {
@@ -66,7 +67,7 @@ class _ScannedCodesState extends State<ScannedCodesScreen> {
           leading: Icon(Icons.camera_alt),
           title: Text(value),
           onTap: () {
-            Navigator.of(context).pushNamed(route.details,
+            Navigator.of(context).pushNamed(QrCodeReaderRoutes.details,
                 arguments: QrCodeDetailsArgument(value));
           },
         ),

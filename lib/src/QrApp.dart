@@ -3,8 +3,8 @@ import 'package:qr_reader/src/ui/HomeScreen.dart';
 import 'package:qr_reader/src/ui/QrCodeDetailsScreen.dart';
 import 'package:qr_reader/src/ui/QrCodeReaderScreen.dart';
 import 'package:qr_reader/src/ui/SplashScreen.dart';
-import 'package:qr_reader/src/utils/Routes.dart';
 import 'package:qr_reader/src/utils/constants.dart';
+import 'package:qr_reader/src/utils/routes.dart';
 
 class QrApp extends StatelessWidget {
   //region StatelessWidget
@@ -60,14 +60,14 @@ class QrApp extends StatelessWidget {
 
       // Define app routes
       routes: {
-        splash: (context) => SplashScreen(),
-        home: (context) => HomeScreen(),
-        scan: (context) => QrCodeReaderScreen(),
-        details: (context) => QrCodeDetailsScreen()
+        QrCodeReaderRoutes.splash: (context) => SplashScreen(),
+        QrCodeReaderRoutes.home: (context) => HomeScreen(),
+        QrCodeReaderRoutes.scan: (context) => QrCodeReaderScreen(),
+        QrCodeReaderRoutes.details: (context) => QrCodeDetailsScreen()
       },
 
       // Define initial route
-      initialRoute: splash,
+      initialRoute: QrCodeReaderRoutes.splash,
     );
   }
 //endregion
