@@ -61,7 +61,7 @@ class QrApp extends StatelessWidget {
 
       // Define app routes
       routes: {
-        QrCodeReaderRoutes.splash: (context) {
+        QrCodeReaderRoutes.home: (context) {
           return MultiBlocProvider(
             providers: [
               BlocProvider<HomeTabBloc>(
@@ -71,13 +71,12 @@ class QrApp extends StatelessWidget {
             child: HomeScreen(),
           );
         },
-        QrCodeReaderRoutes.home: (context) => HomeScreen(),
         QrCodeReaderRoutes.scan: (context) => QrCodeReaderScreen(),
         QrCodeReaderRoutes.details: (context) => QrCodeDetailsScreen()
       },
 
       // Define initial route
-      initialRoute: QrCodeReaderRoutes.splash,
+      initialRoute: QrCodeReaderRoutes.home,
     );
   }
 //endregion
