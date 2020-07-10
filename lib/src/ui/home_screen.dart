@@ -9,6 +9,7 @@ import 'package:qr_reader/src/utils/Routes.dart';
 import 'package:qr_reader/src/widgets/tabs_selector.dart';
 
 class HomeScreen extends StatelessWidget {
+  //region StatelessWidget
   @override
   Widget build(BuildContext context) {
     final tabBloc = BlocProvider.of<HomeTabBloc>(context);
@@ -37,4 +38,5 @@ class HomeScreen extends StatelessWidget {
       },
     );
   }
+//endregion
 }
